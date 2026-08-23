@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 
 from pathlib import Path
 import os
+import shutil
 import dj_database_url
 from dotenv import load_dotenv
 
@@ -84,9 +85,23 @@ WSGI_APPLICATION = 'SMS.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
+# If running on Vercel, copy the SQLite database to the writeable /tmp/ directory
+if os.environ.get('VERCEL') == '1' and not os.environ.get('DATABASE_URL'):
+    db_path = '/tmp/db.sqlite3'
+    # Copy the database from read-only directory if not already copied in this container
+    if not os.path.exists(db_path):
+        source_db = os.path.join(BASE_DIR, 'db.sqlite3')
+        if os.path.exists(source_db):
+            try:
+                shutil.copy2(source_db, db_path)
+            except Exception as e:
+                print(f"Error copying database: {e}")
+else:
+    db_path = os.path.join(BASE_DIR, 'db.sqlite3')
+
 DATABASES = {
     'default': dj_database_url.config(
-        default=f"sqlite:///{os.path.join(BASE_DIR, 'db.sqlite3')}",
+        default=f"sqlite:///{db_path}",
         conn_max_age=600
     )
 }
