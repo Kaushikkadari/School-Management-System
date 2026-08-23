@@ -1,6 +1,6 @@
 #!/bin/bash
 echo "Installing requirements..."
-pip install -r requirements.txt
+python -m pip install -r requirements.txt --break-system-packages
 
 echo "Collecting static files..."
 python manage.py collectstatic --noinput --clear
