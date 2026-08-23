@@ -1,0 +1,25 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Django local configurations / secrets
+.env
+
+# Databases
+db.sqlite3
+db.sqlite3-journal
+
+# Media / static files serving
+media/
+staticfiles/
+
+# Virtual Environment
+venv/
+ENV/
+env/
+
+# OS specific files
+.DS_Store
+Thumbs.db
