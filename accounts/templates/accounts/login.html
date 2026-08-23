@@ -49,6 +49,7 @@
             object-fit: cover;
             opacity: 0;
             animation: fadeInOut 16s infinite;
+            text-indent: -10000px;
         }
 
         .background-slideshow img:nth-child(1) {
@@ -80,7 +81,7 @@
         .login-container {
             max-width: 400px;
             width: 90%;
-            padding: 30px;
+            padding: 20px 25px;
             background-color: rgba(255, 255, 255, 0.95);
             border-radius: 15px;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
@@ -92,7 +93,7 @@
 
         .login-header {
             text-align: center;
-            margin-bottom: 30px;
+            margin-bottom: 15px;
         }
 
         .login-header h2 {
@@ -235,7 +236,7 @@
         /* Role-based login tabs styling */
         .nav-pills {
             gap: 10px;
-            margin-bottom: 25px !important;
+            margin-bottom: 15px !important;
         }
 
         .nav-pills .nav-link {
@@ -291,7 +292,7 @@
         <img src="https://images.unsplash.com/photo-1541339907198-e08756dedf3f?auto=format&fit=crop&w=1920&q=80" alt="School Campus">
         <img src="https://images.unsplash.com/photo-1521587760476-6c12a4b040da?auto=format&fit=crop&w=1920&q=80" alt="School Library">
         <img src="https://images.unsplash.com/photo-1427504494785-3a9ca7044f45?auto=format&fit=crop&w=1920&q=80" alt="Classroom Learning">
-        <img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=1920&q=80" alt="Student Life">
+        <img src="https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=1920&q=80" alt="Student Life">
     </div>
     <div class="overlay"></div>
 
@@ -427,23 +428,20 @@
                 <p>Don't have an account? <a href="{% url 'register' %}">Register here</a></p>
             </div>
 
-            <!-- Demo Credentials Helper Box -->
-            <div class="mt-4 p-3 bg-light rounded border border-secondary-subtle text-start" style="font-size: 0.85rem; line-height: 1.4;">
-                <div class="d-flex align-items-center mb-2 text-primary fw-bold">
-                    <i class="fas fa-info-circle me-2"></i>
-                    <span>Demo Accounts (For Reviewers)</span>
+            <!-- Compact Demo Credentials Helper Box -->
+            <div class="mt-3 p-2 bg-light rounded border border-secondary-subtle text-start" style="font-size: 0.725rem; line-height: 1.35; max-width: 100%;">
+                <div class="d-flex align-items-center mb-1 text-primary fw-bold" style="font-size: 0.775rem;">
+                    <i class="fas fa-info-circle me-1"></i>
+                    <span>Demo Accounts (For Reviewers):</span>
                 </div>
                 <div class="mb-1">
-                    <strong>Admin Role:</strong><br>
-                    <span class="text-muted">Username:</span> <code>admin</code> | <span class="text-muted">Password:</span> <code>admin123</code>
+                    <strong>Admin:</strong> <code>admin</code> | Password: <code>admin123</code>
                 </div>
                 <div class="mb-1">
-                    <strong>Teacher Role:</strong><br>
-                    <span class="text-muted">Teacher ID:</span> <code>TCH_MANUAL</code> (or <code>teacher_manual</code>) | <span class="text-muted">Password:</span> <code>TeacherPass123!</code>
+                    <strong>Teacher:</strong> <code>TCH_MANUAL</code> (or <code>teacher_manual</code>) | Password: <code>TeacherPass123!</code>
                 </div>
                 <div>
-                    <strong>Student Role:</strong><br>
-                    <span class="text-muted">Student ID:</span> <code>STD_MANUAL</code> (or <code>student_manual</code>) | <span class="text-muted">Password:</span> <code>StudentPass123!</code>
+                    <strong>Student:</strong> <code>STD_MANUAL</code> (or <code>student_manual</code>) | Password: <code>StudentPass123!</code>
                 </div>
             </div>
 
