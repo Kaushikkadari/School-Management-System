@@ -2,6 +2,9 @@
 echo "Installing requirements..."
 python -m pip install -r requirements.txt --break-system-packages
 
+# Set BUILD_PHASE to 1 so settings.py writes the database to the project root
+export BUILD_PHASE=1
+
 echo "Running database migrations..."
 python manage.py migrate --noinput
 

@@ -85,8 +85,8 @@ WSGI_APPLICATION = 'SMS.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
-# If running on Vercel, copy the SQLite database to the writeable /tmp/ directory
-if os.environ.get('VERCEL') == '1' and not os.environ.get('DATABASE_URL'):
+# If running on Vercel (and not in build phase), copy the SQLite database to the writeable /tmp/ directory
+if os.environ.get('VERCEL') == '1' and os.environ.get('BUILD_PHASE') != '1' and not os.environ.get('DATABASE_URL'):
     db_path = '/tmp/db.sqlite3'
     # Copy the database from read-only directory if not already copied in this container
     if not os.path.exists(db_path):
