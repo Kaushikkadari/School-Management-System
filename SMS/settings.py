@@ -25,12 +25,12 @@ load_dotenv(os.path.join(BASE_DIR, '.env'))
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', 'django-insecure-k8orqtdz&6l5&t8p5y6e1@d@4mk6%(lbs@etxtgm=&!)1=*vvj')
+SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY') or 'django-insecure-k8orqtdz&6l5&t8p5y6e1@d@4mk6%(lbs@etxtgm=&!)1=*vvj'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = os.environ.get('DJANGO_DEBUG', 'True').lower() == 'true'
+DEBUG = (os.environ.get('DJANGO_DEBUG') or 'True').lower() == 'true'
 
-ALLOWED_HOSTS = os.environ.get('DJANGO_ALLOWED_HOSTS', '192.168.1.14,localhost,127.0.0.1,.vercel.app').split(',') + ['testserver']
+ALLOWED_HOSTS = (os.environ.get('DJANGO_ALLOWED_HOSTS') or '192.168.1.14,localhost,127.0.0.1,.vercel.app').split(',') + ['testserver']
 
 
 # Application definition
@@ -147,12 +147,12 @@ LOGOUT_REDIRECT_URL = 'login'
 LOGIN_URL = 'login'
 
 # Email Configuration
-EMAIL_BACKEND = os.environ.get('DJANGO_EMAIL_BACKEND', 'django.core.mail.backends.console.EmailBackend' if DEBUG else 'django.core.mail.backends.smtp.EmailBackend')
-EMAIL_HOST = os.environ.get('EMAIL_HOST', 'smtp.gmail.com')
-EMAIL_PORT = int(os.environ.get('EMAIL_PORT', 587))
-EMAIL_USE_TLS = os.environ.get('EMAIL_USE_TLS', 'True').lower() == 'true'
-EMAIL_HOST_USER = os.environ.get('EMAIL_HOST_USER', '')
-EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASSWORD', '')
+EMAIL_BACKEND = os.environ.get('DJANGO_EMAIL_BACKEND') or ('django.core.mail.backends.console.EmailBackend' if DEBUG else 'django.core.mail.backends.smtp.EmailBackend')
+EMAIL_HOST = os.environ.get('EMAIL_HOST') or 'smtp.gmail.com'
+EMAIL_PORT = int(os.environ.get('EMAIL_PORT') or 587)
+EMAIL_USE_TLS = (os.environ.get('EMAIL_USE_TLS') or 'True').lower() == 'true'
+EMAIL_HOST_USER = os.environ.get('EMAIL_HOST_USER') or ''
+EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASSWORD') or ''
 
 # Session settings
 SESSION_EXPIRE_AT_BROWSER_CLOSE = True
