@@ -178,8 +178,8 @@ erDiagram
     Department ||--o{ Teacher : "employs"
     Department ||--o{ Expense : "incurs"
 
-    Class ||--o{ Student : "enrolled in section"
-    Class ||--o{ Course : "contains"
+    SchoolClass ||--o{ Student : "enrolled in section"
+    SchoolClass ||--o{ Course : "contains"
 
     Teacher ||--o{ Course : "instructs"
     Teacher ||--o{ ExamSchedule : "supervises"
