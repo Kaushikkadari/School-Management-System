@@ -15,44 +15,68 @@
   <b>A modular, high-performance, and secure full-stack school administration platform featuring multi-tenant Role-Based Access Control (RBAC) across Students, Teachers, and Administrators.</b>
 </p>
 
-[Explore Features](#-core-features--role-breakdown) •
-[System Architecture](#-system-architecture) •
-[Database ERD](#-database-schema--entity-relationships) •
-[Quick Start](#-local-quick-start) •
-[Vercel Deployment](#-vercel-serverless-deployment) •
-[API Routing](#-url-routing--view-structure)
+[💡 Overview](#executive-summary) •
+[🔑 Live Demo](#live-demo) •
+[🏛️ Architecture](#system-architecture) •
+[🗄️ Database ERD](#database-erd) •
+[🌟 Portals](#core-features) •
+[💻 Local Setup](#local-setup) •
+[☁️ Vercel Deploy](#vercel-deployment) •
+[🌐 API Routing](#url-routing)
 
 </div>
 
 ---
 
-## 📑 Table of Contents
+<a id="table-of-contents"></a>
+## 📑 Interactive Navigation Dashboard
 
-- [Executive Summary](#-executive-summary)
-- [Live Demo & Test Credentials](#-live-demo--test-credentials)
-- [System Architecture](#-system-architecture)
-  - [High-Level Architectural Workflow](#high-level-architectural-workflow)
-  - [Architectural Layers & Components](#architectural-layers--components)
-  - [Dual-Database Strategy & Vercel Serverless Bridge](#dual-database-strategy--vercel-serverless-bridge)
-- [Database Schema & Entity Relationships](#-database-schema--entity-relationships)
-- [Core Features & Role Breakdown](#-core-features--role-breakdown)
-  - [1. Student Portal](#1-student-portal)
-  - [2. Teacher Portal](#2-teacher-portal)
-  - [3. Administrator Operations](#3-administrator-operations)
-- [Reporting & Data Export Engines](#-reporting--data-export-engines)
-- [Technology Stack](#-technology-stack)
-- [Security & Performance Engineering](#-security--performance-engineering)
-- [Project Directory Structure](#-project-directory-structure)
-- [URL Routing & View Structure](#-url-routing--view-structure)
-- [Local Quick Start](#-local-quick-start)
-  - [Automated Setup](#automated-setup-recommended)
-  - [Manual Installation](#manual-installation)
-- [Vercel Serverless Deployment](#-vercel-serverless-deployment)
-- [Management Commands](#-management-commands)
-- [Contributing & License](#-contributing--license)
+<table>
+  <tr>
+    <td width="50%" valign="top">
+      <h3>🚀 Getting Started</h3>
+      <ul>
+        <li><a href="#executive-summary">💡 <b>Executive Summary</b></a><br><i>Platform mission, scope & institutional benefits</i></li>
+        <li><a href="#live-demo">🔑 <b>Live Demo & Test Accounts</b></a><br><i>Pre-configured reviewer login credentials</i></li>
+        <li><a href="#local-setup">💻 <b>Local Quick Start</b></a><br><i>1-click automated setup & manual runbook</i></li>
+        <li><a href="#vercel-deployment">☁️ <b>Vercel Serverless Deployment</b></a><br><i>Cloud deployment & environment setup</i></li>
+      </ul>
+    </td>
+    <td width="50%" valign="top">
+      <h3>🏛️ System Architecture</h3>
+      <ul>
+        <li><a href="#system-architecture">📐 <b>Architectural Workflow</b></a><br><i>5-layer workflow & C4-style Mermaid diagram</i></li>
+        <li><a href="#database-erd">🗄️ <b>Database Schema & ERD</b></a><br><i>Entity relationships & domain model maps</i></li>
+        <li><a href="#security-engineering">🔒 <b>Security & Performance</b></a><br><i>RBAC, password hashing & caching pipeline</i></li>
+        <li><a href="#tech-stack">🛠️ <b>Technology Stack</b></a><br><i>Django, PostgreSQL, Bootstrap & libraries</i></li>
+      </ul>
+    </td>
+  </tr>
+  <tr>
+    <td width="50%" valign="top">
+      <h3>🌟 Portals & Workflows</h3>
+      <ul>
+        <li><a href="#student-portal">🎓 <b>Student Portal</b></a><br><i>Self-enrollment, timetables, homework & fees</i></li>
+        <li><a href="#teacher-portal">👨‍🏫 <b>Teacher Portal</b></a><br><i>Attendance logger, gradebook & course hub</i></li>
+        <li><a href="#admin-operations">🛡️ <b>Administrator Operations</b></a><br><i>Onboarding, room conflicts & expense auditor</i></li>
+        <li><a href="#reporting-engines">📊 <b>Reporting & Data Exports</b></a><br><i>PDF generation & Excel spreadsheet engine</i></li>
+      </ul>
+    </td>
+    <td width="50%" valign="top">
+      <h3>📂 Directory & API Map</h3>
+      <ul>
+        <li><a href="#project-structure">📁 <b>Directory Structure</b></a><br><i>Annotated full-tree codebase architecture</i></li>
+        <li><a href="#url-routing">🌐 <b>URL Routing Map</b></a><br><i>152 route catalog & permission requirements</i></li>
+        <li><a href="#management-commands">⚡ <b>Management Commands</b></a><br><i>CLI utilities for database & account seeding</i></li>
+        <li><a href="#contributing-license">🤝 <b>Contributing & License</b></a><br><i>Open-source guidelines & MIT license</i></li>
+      </ul>
+    </td>
+  </tr>
+</table>
 
 ---
 
+<a id="executive-summary"></a>
 ## 💡 Executive Summary
 
 The **School Management System (SMS)** is engineered to streamline institutional workflows, unify fragmented academic processes, and provide real-time data transparency across all education stakeholders:
@@ -61,8 +85,11 @@ The **School Management System (SMS)** is engineered to streamline institutional
 2. **Educators & Teachers** benefit from streamlined course hubs, dynamic digital syllabus/materials publishing, one-click attendance recording with historic tracking, gradebook computation, and student behavior logging.
 3. **Students** experience an interactive self-service portal for self-enrollment, exam timetable tracking, assignment submission with online status feedback, fee receipt downloads, and private messaging with course instructors.
 
+[⬆ Back to Navigation](#table-of-contents)
+
 ---
 
+<a id="live-demo"></a>
 ## 🚀 Live Demo & Test Credentials
 
 For hiring managers, recruiters, and reviewers evaluating this project live:
@@ -75,8 +102,11 @@ For hiring managers, recruiters, and reviewers evaluating this project live:
 
 > **UI Enhancement**: The login screen features a built-in **Password Visibility Toggle** (eye icon) and an interactive **Demo Credentials Helper Card** for seamless copy-pasting during review.
 
+[⬆ Back to Navigation](#table-of-contents)
+
 ---
 
+<a id="system-architecture"></a>
 ## 🏛️ System Architecture
 
 ### High-Level Architectural Workflow
@@ -136,8 +166,6 @@ flowchart TB
     UI --- Widgets
 ```
 
----
-
 ### Architectural Layers & Components
 
 #### 1. Presentation Layer
@@ -163,8 +191,11 @@ A significant architectural challenge when deploying Django on serverless hostin
   - At runtime, `SMS/settings.py` detects serverless invocation (`VERCEL == '1'`) and copies the pre-seeded `db.sqlite3` into the writable `/tmp/` filesystem.
   - Furthermore, using `dj-database-url`, the application automatically hot-swaps to an external hosted **PostgreSQL** instance (Neon, Supabase, AWS RDS) whenever a `DATABASE_URL` is configured.
 
+[⬆ Back to Navigation](#table-of-contents)
+
 ---
 
+<a id="database-erd"></a>
 ## 🗄️ Database Schema & Entity Relationships
 
 The following entity-relationship diagram details the core relational structure of the SMS database:
@@ -206,10 +237,14 @@ erDiagram
     Payment ||--o| Invoice : "settles"
 ```
 
+[⬆ Back to Navigation](#table-of-contents)
+
 ---
 
+<a id="core-features"></a>
 ## 🌟 Core Features & Role Breakdown
 
+<a id="student-portal"></a>
 ### 1. 🎓 Student Portal
 * **Dynamic Student Dashboard**: Quick-stats summarizing GPA, overall attendance percentage, upcoming assignments, exam dates, and recent institutional notices.
 * **Course Hub & Enrollment**: Browse available academic courses, inspect instructor details, and self-enroll in approved class sections.
@@ -220,6 +255,7 @@ erDiagram
 
 ---
 
+<a id="teacher-portal"></a>
 ### 2. 👨‍🏫 Teacher Portal
 * **Course Administration Hub**: Manage multiple enrolled courses, monitor student rosters, and view real-time class counters.
 * **Course Materials Repository**: Publish lecture slides, PDFs, worksheets, and references with auto-calculated file size badges.
@@ -231,6 +267,7 @@ erDiagram
 
 ---
 
+<a id="admin-operations"></a>
 ### 3. 🛡️ Administrator Operations
 * **Central Analytics Dashboard**: Visual summary of total enrollments, active faculty, overall fee collections, and monthly expenses.
 * **Student & Faculty Management**: Comprehensive CRUD operations for onboarding, profile editing, photo uploading, and status toggling (`Active`, `Suspended`, `Graduated`).
@@ -246,8 +283,11 @@ erDiagram
 * **Financial Ledger & Expense Auditor**: Categorize operational expenses (Salaries, Maintenance, Utilities, Supplies), upload receipts, and monitor balances.
 * **Campus Event Planner**: Create calendar events with visual color coding across the entire institution.
 
+[⬆ Back to Navigation](#table-of-contents)
+
 ---
 
+<a id="reporting-engines"></a>
 ## 📊 Reporting & Data Export Engines
 
 SMS includes specialized reporting engines generating exportable artifacts:
@@ -260,8 +300,11 @@ SMS includes specialized reporting engines generating exportable artifacts:
 | **Financial & Invoicing** | `PDF`, `Excel (.xlsx)` | Fee collection rates, pending invoice dues, operational expense breakdown |
 | **Timetable Schedule** | `PDF` | Weekly matrix of rooms, instructors, and time intervals |
 
+[⬆ Back to Navigation](#table-of-contents)
+
 ---
 
+<a id="tech-stack"></a>
 ## 🛠️ Technology Stack
 
 ```text
@@ -280,8 +323,11 @@ SMS includes specialized reporting engines generating exportable artifacts:
 └── Cloud Platform:       Vercel Serverless Functions (@vercel/python)
 ```
 
+[⬆ Back to Navigation](#table-of-contents)
+
 ---
 
+<a id="security-engineering"></a>
 ## 🔒 Security & Performance Engineering
 
 1. **Strict Environment Segregation**: Hardcoded credentials and secret keys have been extracted into `.env` configurations utilizing `python-dotenv`.
@@ -292,8 +338,11 @@ SMS includes specialized reporting engines generating exportable artifacts:
 4. **Resilient Type Fallbacks**: Settings parameters employ safe fallback casts (`os.environ.get('PORT') or 587`) to protect against unconfigured empty strings on cloud providers.
 5. **Static Compression**: WhiteNoise delivers Gzip and Brotli compressed static assets with aggressive `max-age` caching headers.
 
+[⬆ Back to Navigation](#table-of-contents)
+
 ---
 
+<a id="project-structure"></a>
 ## 📂 Project Directory Structure
 
 ```text
@@ -345,8 +394,11 @@ School-Management-System/
 └── vercel.json                   # Vercel Build & Lambda Routing Configuration
 ```
 
+[⬆ Back to Navigation](#table-of-contents)
+
 ---
 
+<a id="url-routing"></a>
 ## 🌐 URL Routing & View Structure
 
 SMS features a well-structured routing hierarchy:
@@ -373,8 +425,11 @@ SMS features a well-structured routing hierarchy:
 | `/student/assignments/` | `Student` | Submit assignments and view teacher feedback |
 | `/student/fees/` | `Student` | Pay pending tuition dues and download invoices |
 
+[⬆ Back to Navigation](#table-of-contents)
+
 ---
 
+<a id="local-setup"></a>
 ## 💻 Local Quick Start
 
 ### Automated Setup (Recommended)
@@ -442,8 +497,11 @@ python manage.py runserver
 ```
 Visit `http://127.0.0.1:8000/` in your browser.
 
+[⬆ Back to Navigation](#table-of-contents)
+
 ---
 
+<a id="vercel-deployment"></a>
 ## ☁️ Vercel Serverless Deployment
 
 This project is pre-configured for seamless serverless deployment on **Vercel**:
@@ -476,8 +534,11 @@ Click **Deploy**. Vercel will:
 4. Execute `python manage.py collectstatic` to package WhiteNoise assets.
 5. Launch the serverless function handler via `SMS/wsgi.py`.
 
+[⬆ Back to Navigation](#table-of-contents)
+
 ---
 
+<a id="management-commands"></a>
 ## ⚡ Management Commands
 
 SMS includes custom CLI management utilities located in `accounts/management/commands/`:
@@ -494,8 +555,11 @@ SMS includes custom CLI management utilities located in `accounts/management/com
   ```
   Ensures `teacher_manual` (`TCH_MANUAL`) and `student_manual` (`STD_MANUAL`) exist and are linked to active course sections.
 
+[⬆ Back to Navigation](#table-of-contents)
+
 ---
 
+<a id="contributing-license"></a>
 ## 🤝 Contributing & License
 
 Contributions, issues, and feature requests are welcome!
@@ -513,4 +577,6 @@ Distributed under the **MIT License**. See [`LICENSE`](LICENSE) for more informa
 
 <div align="center">
   <sub>Developed with ❤️ for academic institutions, educators, and students.</sub>
+  <br>
+  <a href="#table-of-contents"><b>Back to Top ⬆</b></a>
 </div>
