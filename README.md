@@ -85,32 +85,32 @@ The application is architected around modern Django Model-View-Template (MVT) pr
 
 ```mermaid
 flowchart TB
-    subgraph ClientLayer [Client & Presentation Layer]
+    subgraph ClientLayer ["Client & Presentation Layer"]
         Browser["Desktop & Mobile Browsers"]
         UI["Bootstrap 5.3 + FontAwesome 6 UI"]
         Widgets["Chart.js 4 (Analytics) + FullCalendar 5.11 (Timetable)"]
     end
 
-    subgraph EdgeLayer [Edge Gateway & Static Delivery]
+    subgraph EdgeLayer ["Edge Gateway & Static Delivery"]
         VercelEdge["Vercel Edge Network / CDN"]
         WhiteNoise["WhiteNoise Static Engine (Cache-Control & Gzip/Brotli)"]
     end
 
-    subgraph AppLayer [Application & Controller Layer (Django 4.2)]
+    subgraph AppLayer ["Application & Controller Layer (Django 4.2)"]
         WSGI["WSGI Handler (SMS/wsgi.py)"]
         SecMiddleware["Security, Session & CSRF Middleware"]
         RBAC["Role-Based Access Control (Admin / Teacher / Student Dispatcher)"]
         Views["Domain Controllers & View Handlers (accounts/views.py)"]
     end
 
-    subgraph ServiceLayer [Business & Processing Engines]
+    subgraph ServiceLayer ["Business & Processing Engines"]
         DocGen["PDF Generator (ReportLab)"]
         SheetGen["Excel Streamer (openpyxl & xlsxwriter)"]
         AuthEngine["Authentication & Password Hashers (PBKDF2)"]
         Mailer["SMTP & Console Email Notifier"]
     end
 
-    subgraph StorageLayer [Persistence & Data Layer]
+    subgraph StorageLayer ["Persistence & Data Layer"]
         Bridge["Serverless /tmp Writable DB Bridge"]
         SQLite["SQLite 3 Engine (Local Dev & Ephemeral Preview)"]
         Postgres["PostgreSQL / Supabase / Neon (Production DB)"]
@@ -118,7 +118,7 @@ flowchart TB
     end
 
     Browser -->|HTTPS Requests| VercelEdge
-    VercelEdge -->|Static Assets /static/*| WhiteNoise
+    VercelEdge -->|Static Assets /static/| WhiteNoise
     VercelEdge -->|Dynamic App Routes| WSGI
     WSGI --> SecMiddleware
     SecMiddleware --> RBAC
